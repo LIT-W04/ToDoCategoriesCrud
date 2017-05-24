@@ -1,0 +1,22 @@
+﻿@using WebApplication24.Models
+@model AddCategoryViewModel
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+    <title>Index</title>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 col-md-offset-3 well">
+                <h1>Category @Model.Category.Name Added!!</h1>
+                <h2>New Id is @Model.Category.Id</h2>
+                <a href="/home/todo" class="btn btn-success">Back to Categories</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

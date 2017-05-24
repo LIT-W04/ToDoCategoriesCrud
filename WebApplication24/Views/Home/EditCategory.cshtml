@@ -1,0 +1,24 @@
+﻿@using WebApplication24.Models
+@model ToDoCategory
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 well">
+                <form action="/home/updatecategory" method="POST">
+                    <input type="text" value="@Model.Name" placeholder="Name" name="name" class="form-control" />
+                    <br />
+                    <input type="hidden" value="@Model.Id" name="Id" />
+                    <button class="btn btn-warning">Update</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

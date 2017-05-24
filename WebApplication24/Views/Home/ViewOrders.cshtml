@@ -1,0 +1,37 @@
+﻿@using WebApplication24.Models
+@model OrdersViewModel
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 well">
+                <h2>Orders placed between @Model.FromDate.ToShortDateString() and @Model.ToDate.ToShortDateString()</h2>
+                <table class="table table-hover table-striped table-bordered">
+                    <tr>
+                        <th>Customer Id</th>
+                        <th>Order Date</th>
+                        <th>Freight</th>
+                        <th>Ship Name</th>
+                    </tr>
+                    @foreach (Order order in Model.Orders)
+                    {
+                        <tr>
+                            <td>@order.CustomerId</td>
+                            <td>@order.OrderDate.ToShortDateString()</td>
+                            <td>@order.Freight.ToString("C")</td>
+                            <td>@order.ShipName</td>
+                        </tr>
+                    }
+                </table>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
